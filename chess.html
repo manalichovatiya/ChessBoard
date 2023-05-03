@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board</title>
+</head> 
+ <body>
+    <style>    
+       html{
+        background-color:rgb(169, 166, 166) ;
+       }    
+        .black{
+            background-color: black;
+            width: 60px;
+            height: 60px;
+        }
+        .white{
+            background-color: #fff;
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+    <table id="root" border="5" align="center"></table>
+    <script type="text/javascript">
+        let td = document.getElementById('root');        
+        for(let i=1;i<=8;i++){
+            let tr = document.createElement('tr')
+            if(i%2==1){
+                for(let j=1;j<=8;j++){
+                    if(j%2==1){
+                        let td = document.createElement('td');
+                        td.setAttribute('class','white');
+                        tr.appendChild(td);
+                    }else{                       
+                        let td = document.createElement('td');
+                        td.setAttribute('class','black');
+                        tr.appendChild(td);
+                    }
+                }
+            }else{
+                for(j=1;j<=8;j++){
+                    if(j%2==1){
+                        let td = document.createElement('td');
+                        td.setAttribute('class','black');
+                        tr.appendChild(td);
+                    }else{                        
+                        let td = document.createElement('td');
+                        td.setAttribute('class','white');
+                        tr.appendChild(td);
+                    }
+                }
+            }
+            root.appendChild(tr); 
+        }
+    </script>
+</body> 
+</html>
